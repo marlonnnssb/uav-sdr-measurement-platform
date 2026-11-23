@@ -9,8 +9,6 @@ The LC29H HAT mounts directly onto the Raspberry Pi's 40-pin header
 and communicates through UART. The BNO055 uses the I²C interface,
 while the LimeSDR Mini connects through USB 2.0.
 
-The instructions below cover configuration and execution of the
-GNSS subsystem.
 
 ## GNSS Subsystem — Configuration and Execution
 
