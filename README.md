@@ -22,9 +22,7 @@ The platform was developed using the following components:
 | Orientation sensor | Adafruit BNO055 breakout board | Provides orientation and inertial measurements through I²C |
 | RF receiving antenna | Directional patch antenna for 3.5 GHz | Receives the signal under measurement |
 | Internet connection | ZTE MF920U 4G modem/router | Provides Wi-Fi internet access for receiving IBGE NTRIP corrections |
-| Power supply | USB power bank | Powers the acquisition platform |
-| Structural base | 4-mm acrylic sheet | Supports the electronic modules |
-| Aerial carrier | DJI Mavic 3 Classic | Carries the receiving platform during flight |
+| Power supply | Power Bank i2GO 5000 mAh | Powers the acquisition platform |
 
 The integrated payload had a total mass of approximately **442 g**.
 The power bank supplied the acquisition system for more than **120 minutes**
