@@ -1,6 +1,6 @@
 # GNSS Subsystem — Configuration and Execution
 
-This guide covers LC29H receiver configuration, reception of IBGE NTRIP corrections, and logging of positioning data and rover RTCM observations. RF acquisition and IMU logging are handled separately.
+This guide covers LC29H receiver configuration, reception of IBGE NTRIP corrections, and logging of positioning data and rover RTCM observations.
 
 ## Prerequisites
 
