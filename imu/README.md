@@ -129,7 +129,7 @@ The CSV contains:
 
 | Measurements | Units or convention |
 |---|---|
-| Heading, roll, pitch | Degrees; pitch sign is inverted by the logger |
+| Heading, roll, pitch | Degrees|
 | Relative yaw | Heading difference from the initial reference, wrapped to −180° to 180° |
 | Quaternion | Components ordered as w, x, y, z |
 | Acceleration | m/s², including gravity |
