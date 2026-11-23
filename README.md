@@ -1,6 +1,8 @@
-## Configuration and execution
+## GNSS Subsystem — Configuration and Execution
 
-First, enable the Raspberry Pi UART interface, disable the serial login console, and ensure your user has permission to access the serial device. The scripts use `/dev/ttyAMA0` at 115200 baud by default.
+This guide covers the GNSS subsystem of the UAV–SDR measurement platform, including LC29H receiver configuration, reception of IBGE NTRIP corrections, and logging of positioning data and rover RTCM observations. RF acquisition and IMU logging are handled separately.
+
+First, enable the Raspberry Pi UART interface, disable the serial login console, and ensure your user has permission to access the serial device. The GNSS scripts use `/dev/ttyAMA0` at 115200 baud by default.
 
 ### 1. Install the Python dependency
 
@@ -39,7 +41,7 @@ IBGE_PASSWORD = "YOUR_IBGE_PASSWORD"
 
 Replace both placeholders with your credentials. Do not commit the edited credentials to GitHub.
 
-### 5. Start acquisition
+### 5. Start GNSS acquisition
 
 ```bash
 python3 ntrip_rover_ibge.py --mount RJNI0 --outdir logs --indicator
@@ -51,4 +53,4 @@ The script saves positioning data in CSV format and rover RTCM observations in `
 
 A successful connection displays `NTRIP connected (200)`. This confirms authentication; RTK solution status is reported separately by `FixQ`: `4` indicates RTK fixed and `5` indicates RTK float.
 
-Press **Ctrl+C** to stop acquisition. Run the configuration scripts and logger separately, since they access the same UART port.
+Press **Ctrl+C** to stop acquisition. Run the configuration scripts and GNSS logger separately, since they access the same UART port.
