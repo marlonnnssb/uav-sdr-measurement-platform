@@ -51,8 +51,6 @@ The scripts use the BNO055's default I²C address, **0x28**.
 If your sensor uses another address, update the sensor initialization
 in both scripts.
 
-Disabling Bluetooth is not required by these I²C scripts.
-
 ## 3. Open the IMU directory
 
 From the repository's main directory:
