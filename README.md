@@ -9,6 +9,34 @@ acquiring data from each subsystem. Before execution, assemble the
 hardware according to the wiring diagram and follow the dependencies,
 configuration, and calibration instructions in each subsystem's README.
 
+## Hardware used
+
+The platform was developed using the following components:
+
+| Component | Model or specification | Function |
+|---|---|---|
+| Embedded computer | Raspberry Pi 5 | Runs the acquisition scripts and stores measurement data |
+| SDR receiver | LimeSDR Mini v2.4 | Acquires RF signals through a USB 2.0 connection |
+| GNSS receiver | Waveshare LC29H(DA) GNSS HAT | Provides positioning, RTK capability, and rover observations through UART |
+| GNSS antenna | External antenna supplied with the LC29H HAT | Receives GNSS signals |
+| Orientation sensor | Adafruit BNO055 breakout board | Provides orientation and inertial measurements through I²C |
+| RF receiving antenna | Directional patch antenna for 3.5 GHz | Receives the signal under measurement |
+| Internet connection | ZTE MF920U 4G modem/router | Provides Wi-Fi internet access for receiving IBGE NTRIP corrections |
+| Power supply | USB power bank | Powers the acquisition platform |
+| Structural base | 4-mm acrylic sheet | Supports the electronic modules |
+| Aerial carrier | DJI Mavic 3 Classic | Carries the receiving platform during flight |
+
+The integrated payload had a total mass of approximately **442 g**.
+The power bank supplied the acquisition system for more than **120 minutes**
+during testing.
+
+The supplied RF configuration targets narrowband measurements at **3.5 GHz**.
+Using different hardware or frequency settings may require changes to the
+drivers, acquisition parameters, antenna selection, and calibration.
+
+Refer to the [wiring diagram](docs/platform_wiring.png) and each subsystem's
+README before assembling and operating the platform.
+
 ## Hardware connections
 
 The diagram below shows the platform wiring, including the LC29H
@@ -19,6 +47,10 @@ GNSS HAT, BNO055 IMU, LimeSDR Mini, and modem power connections.
 The LC29H HAT mounts directly onto the Raspberry Pi's 40-pin header
 and communicates through UART. The BNO055 uses I²C, while the
 LimeSDR Mini connects through USB 2.0.
+
+To reduce the payload weight, the 4G modem/router was modified by removing its
+internal battery and enclosure. The adapted device was powered directly from 
+the Raspberry Pi's 5 V supply and ground pins, as shown in the wiring diagram.
 
 ## Subsystems
 
