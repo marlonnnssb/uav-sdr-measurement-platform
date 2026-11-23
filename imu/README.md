@@ -148,16 +148,3 @@ on I²C communication and system load; polling frequency does not guarantee
 that every sensor channel provides a new measurement at each sample.
 
 Timestamps use the Raspberry Pi's local system clock.
-
-## Troubleshooting
-
-- **Sensor not detected:** check power, ground, SDA/SCL wiring, I²C
-  configuration, and sensor address.
-- **Import errors:** confirm that the dependencies are installed in
-  the active Python environment.
-- **Calibration does not finish:** follow the requested movements and
-  check for nearby magnetic interference.
-- **Logger remains in stabilization:** keep the assembly still and
-  check whether heading readings are stable.
-- **Intermittent I²C errors:** consult Adafruit's
-  [I²C clock-stretching guidance](https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/i2c-clock-stretching).
