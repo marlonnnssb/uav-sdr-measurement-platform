@@ -53,9 +53,6 @@ startup order is:
    GNU Radio Companion and confirm that the RF CSV is being written.
 5. **Begin the experiment** once all three subsystems are recording.
 
-For an automated workflow, use the generated status information and
-output files to confirm readiness instead of relying only on fixed delays.
-
 ## Output files and timing
 
 Each subsystem writes its own measurement files to its configured
