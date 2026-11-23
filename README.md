@@ -1,2 +1,54 @@
-# uav-sdr-measurement-platform
-Code and documentation for a lightweight, low-cost UAV–SDR platform integrating RF acquisition, GNSS RTK positioning, and IMU orientation measurements.
+## Configuration and execution
+
+First, enable the Raspberry Pi UART interface, disable the serial login console, and ensure your user has permission to access the serial device. The scripts use `/dev/ttyAMA0` at 115200 baud by default.
+
+### 1. Install the Python dependency
+
+```bash
+python3 -m pip install pyserial
+```
+
+### 2. Configure the receiver as a rover
+
+This command applies the rover settings, enables positioning messages and RTCM observation output, saves the configuration, and requests a cold restart.
+
+```bash
+python3 lc29h_apply_config.py --profile rover --save --cold
+```
+
+Check the generated configuration log to confirm that the receiver accepted the commands.
+
+### 3. Configure NMEA output resolution
+
+Set latitude and longitude to eight decimal places in NMEA minutes and altitude to three decimal places.
+
+```bash
+python3 lc29h_apply_config.py --profile precision --pos-dp 8 --alt-dp 3 --save
+```
+
+These settings control output resolution, not positioning accuracy.
+
+### 4. Enter your IBGE credentials
+
+Edit these variables near the top of your local copy of `ntrip_rover_ibge.py`:
+
+```python
+IBGE_USERNAME = "YOUR_IBGE_USERNAME"
+IBGE_PASSWORD = "YOUR_IBGE_PASSWORD"
+```
+
+Replace both placeholders with your credentials. Do not commit the edited credentials to GitHub.
+
+### 5. Start acquisition
+
+```bash
+python3 ntrip_rover_ibge.py --mount RJNI0 --outdir logs --indicator
+```
+
+Replace `RJNI0` with the desired IBGE station mountpoint.
+
+The script saves positioning data in CSV format and rover RTCM observations in `.rtcm3` format inside `logs/`. RTCM observation logging requires the receiver to accept the corresponding output configuration.
+
+A successful connection displays `NTRIP connected (200)`. This confirms authentication; RTK solution status is reported separately by `FixQ`: `4` indicates RTK fixed and `5` indicates RTK float.
+
+Press **Ctrl+C** to stop acquisition. Run the configuration scripts and logger separately, since they access the same UART port.
