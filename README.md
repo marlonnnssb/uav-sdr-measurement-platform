@@ -39,7 +39,7 @@ IBGE_USERNAME = "YOUR_IBGE_USERNAME"
 IBGE_PASSWORD = "YOUR_IBGE_PASSWORD"
 ```
 
-Replace both placeholders with your credentials. Do not commit the edited credentials to GitHub.
+Replace both placeholders with your credentials.
 
 ### 5. Start GNSS acquisition
 
