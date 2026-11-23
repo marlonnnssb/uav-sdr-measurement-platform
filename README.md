@@ -75,13 +75,11 @@ startup order is:
 1. **Start GNSS acquisition.** Confirm that positioning data are being
    recorded and wait for the solution quality required by the experiment.
    For measurements requiring RTK fixed positioning, wait for `FixQ=4`.
-2. **Calibrate the IMU if needed.** Complete calibration before starting
-   the IMU logger; these two scripts must run separately.
-3. **Start IMU acquisition.** Keep the platform stationary during
+2. **Start IMU acquisition.** Keep the platform stationary during
    stabilization and wait until CSV logging begins.
-4. **Start RF acquisition.** Execute the supplied flowgraph in
+3. **Start RF acquisition.** Execute the supplied flowgraph in
    GNU Radio Companion and confirm that the RF CSV is being written.
-5. **Begin the experiment** once all three subsystems are recording.
+4. **Begin the experiment** once all three subsystems are recording.
 
 ## Output files and timing
 
