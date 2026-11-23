@@ -1,3 +1,17 @@
+### Hardware connections
+
+The diagram below shows the platform wiring, including the LC29H
+GNSS HAT, BNO055 IMU, LimeSDR Mini, and modem power connections.
+
+![UAV–SDR platform wiring diagram](docs/platform_wiring.png)
+
+The LC29H HAT mounts directly onto the Raspberry Pi's 40-pin header
+and communicates through UART. The BNO055 uses the I²C interface,
+while the LimeSDR Mini connects through USB 2.0.
+
+The instructions below cover configuration and execution of the
+GNSS subsystem.
+
 ## GNSS Subsystem — Configuration and Execution
 
 This guide covers the GNSS subsystem of the UAV–SDR measurement platform, including LC29H receiver configuration, reception of IBGE NTRIP corrections, and logging of positioning data and rover RTCM observations. RF acquisition and IMU logging are handled separately.
