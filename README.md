@@ -24,7 +24,6 @@ The platform was developed using the following components:
 | Internet connection | ZTE MF920U 4G modem/router | Provides Wi-Fi internet access for receiving IBGE NTRIP corrections |
 | Power supply | Power Bank i2GO 5000 mAh | Powers the acquisition platform |
 
-The integrated payload had a total mass of approximately **442 g**.
 The power bank supplied the acquisition system for more than **120 minutes**
 during testing.
 
